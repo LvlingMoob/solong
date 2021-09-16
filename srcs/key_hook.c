@@ -112,7 +112,7 @@ int	mvt_down(t_pos *pos)
 	return (0);
 }
 
-int	map_adjustment(t_pos *pos, int mvt)
+int	map_adjustment(t_pos *pos, int mvt, int *nbr)
 {
 	int	x;
 	int	y;
@@ -121,15 +121,15 @@ int	map_adjustment(t_pos *pos, int mvt)
 	y = pos->y;
 	if (mvt == UP)
 		if (mvt_top(pos))
-			return (1);
+			return (*nbr += 1);
 	if (mvt == RIGHT)
 		if (mvt_right(pos))
-			return (1);
+			return (*nbr += 1);
 	if (mvt == LEFT)
 		if (mvt_left(pos))
-			return (1);
+			return (*nbr += 1);
 	if (mvt == DOWN)
 		if (mvt_down(pos))
-			return (1);
+			return (*nbr += 1);
 	return (0);
 }

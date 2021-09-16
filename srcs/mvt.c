@@ -14,25 +14,24 @@
 
 void	action_mvt(int key, t_pos *pos, int *nbr)
 {
-	*nbr += 1;
 	if (key == 13 || key == 126)
 	{
-		if (map_adjustment(pos, UP))
+		if (map_adjustment(pos, UP, nbr))
 			pos->y -= 64;
 	}
 	if (key == 0 || key == 123)
 	{
-		if (map_adjustment(pos, LEFT))
+		if (map_adjustment(pos, LEFT, nbr))
 			pos->x -= 64;
 	}
 	if (key == 2 || key == 124)
 	{
-		if (map_adjustment(pos, RIGHT))
+		if (map_adjustment(pos, RIGHT, nbr))
 			pos->x += 64;
 	}
 	if (key == 1 || key == 125)
 	{
-		if (map_adjustment(pos, DOWN))
+		if (map_adjustment(pos, DOWN, nbr))
 			pos->y += 64;
 	}
 }

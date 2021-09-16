@@ -36,15 +36,20 @@ int	render_next_frame(t_pos *pos)
 int	key_hook(int key, t_pos *pos)
 {
 	static int	nbr = 0;
+	int			lstmv;
 
+	lstmv = nbr;
 	where_is_charlie(pos);
 	if (key == 53)
 		close_img_win(pos);
 	if (!pos->endgame)
 	{
 		action_mvt(key, pos, &nbr);
-		ft_putnbr(nbr);
-		write(1, "\n", 1);
+		if (nbr != lstmv)
+		{
+			ft_putnbr(nbr);
+			write(1, "\n", 1);
+		}
 	}
 	return (0);
 }

@@ -84,7 +84,7 @@ int		lane_lenght(char *buf);
 void	free_map(char **map);
 short	map_checker(char *buf, int *lastlanelen, int *n);
 void	display_prep(t_pos *pos);
-int		map_adjustment(t_pos *pos, int mvt);
+int		map_adjustment(t_pos *pos, int mvt, int *nbr);
 void	error_map(void);
 int		plants_counter(t_pos *pos);
 void	ft_putnbr(int nbr);
